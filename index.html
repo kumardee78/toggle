@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <style>
+        .container{
+           padding: 5rem 3rem;
+          text-align: center;
+            
+        }
+        h1{
+            font-size: 5rem;
+            font-family: sans-serif;
+        }
+        body{
+            transition: background-color .5s, color .5s;
+            background-image: url("pexels-pixabay-259280.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+</head>
+<body id="backroundChange">
+    <div class="container">
+        <button id="button">Toggle Button</button>
+        
+        <h1>Click on the Toggle Button</h1>
+    </div>
+    <script>
+        let modeBtn = document.getElementById("button");
+        let body = document.querySelector("body");
+        let heading = document.querySelector("h1");
+        
+        let currMode = "light";
+        modeBtn.addEventListener("click", toggleMode);
+
+        function toggleMode() {
+            if(currMode === "light"){
+                currMode = "dark";
+                body.style.backgroundImage = "url(a7f11b249dc0801a00e0e05630420af8.jpg)";
+                heading.style.color = "white";
+            }
+            else{
+                currMode ="light";
+                body.style.backgroundImage = "url(pexels-pixabay-259280.jpg)";
+                heading.style.color = "black";
+
+            }
+        }
+    </script>
+</body>
+</html>
